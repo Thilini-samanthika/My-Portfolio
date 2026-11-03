@@ -10,7 +10,7 @@ Built using **React, Vite, Tailwind CSS, and Framer Motion**, the website featur
 
 ##  Live Portfolio
 
- **Live Website:** Coming Soon
+ **Live Website:** https://my-portfolio-tan-seven-91.vercel.app/
 
  **GitHub Repository:** [My-Portfolio](https://github.com/Thilini-samanthika/My-Portfolio)
 
@@ -127,7 +127,7 @@ I am actively developing my technical knowledge and seeking opportunities to gro
 
 - **GitHub:** https://github.com/Thilini-samanthika
 - **LinkedIn:** https://www.linkedin.com/in/thilini-samanthika-7335a634b/
-- **Portfolio:** https://my-portfolio-kqgt.vercel.app/
+- **Portfolio:** https://my-portfolio-tan-seven-91.vercel.app/
 - **Email:** thilinisadtwnika@gmail.com
 
 ---
