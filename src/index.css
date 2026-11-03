@@ -1,0 +1,536 @@
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================
+   THILINI SAMANTHIKA PORTFOLIO
+   MIDNIGHT LAVENDER THEME
+========================================= */
+
+/* LIGHT MODE */
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color-scheme: light;
+
+  --bg: #f8f7ff;
+  --surface: #ffffff;
+  --card: #ffffff;
+
+  --text: #171329;
+  --muted: #64748b;
+
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+
+  --lavender: #6d28d9;
+  --pink: #db2777;
+
+  --border: #e8e3f5;
+  --glow: rgba(139, 92, 246, 0.12);
+}
+
+/* DARK MODE */
+html.dark {
+  color-scheme: dark;
+
+  --bg: #080b18;
+  --surface: #11162a;
+  --card: #151b30;
+
+  --text: #f8fafc;
+  --muted: #94a3b8;
+
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+
+  --lavender: #a78bfa;
+  --pink: #ec4899;
+
+  --border: #303653;
+  --glow: rgba(139, 92, 246, 0.2);
+}
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================
+   REUSABLE THEME CLASSES
+========================================= */
+
+.theme-bg {
+  background-color: var(--bg);
+}
+
+.theme-surface {
+  background-color: var(--surface);
+}
+
+.theme-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.theme-text {
+  color: var(--text);
+}
+
+.theme-muted {
+  color: var(--muted);
+}
+
+.theme-lavender {
+  color: var(--lavender);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+.theme-button {
+  background: var(--primary);
+  color: #ffffff;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--glow);
+}
+
+.theme-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--lavender),
+    var(--pink)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.theme-glow {
+  box-shadow: 0 0 35px var(--glow);
+}
+
+/* TEXT SELECTION */
+::selection {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+/* =========================================
+   FLOATING ANIMATION
+========================================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* =========================================
+   STAR TWINKLE ANIMATION
+========================================= */
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.portfolio-star {
+  animation: starTwinkle 3.5s ease-in-out infinite;
+}
+
+/* =========================================
+   SKILLS MARQUEE
+   TWO ROW CONTINUOUS ANIMATION
+========================================= */
+
+/* Main marquee container */
+.skills-video-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0 22px;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 7%,
+    #000 93%,
+    transparent 100%
+  );
+}
+
+/* Individual scrolling row */
+.skills-video-row {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* Gap between two rows */
+.skills-video-row + .skills-video-row {
+  margin-top: 8px;
+}
+
+/* Moving track */
+.skills-video-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  animation: skillsMarqueeLeft 35s linear infinite;
+  will-change: transform;
+}
+
+/* Second row moves in opposite direction */
+.skills-video-reverse {
+  animation-name: skillsMarqueeRight;
+}
+
+/* Each duplicate group must have the same width */
+.skills-video-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: 28px;
+
+  padding-right: 28px;
+}
+
+/* Technology item */
+.skills-video-item {
+  display: flex;
+  flex: 0 0 94px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+}
+
+/* =========================================
+   TECHNOLOGY BADGES — LIGHT MODE
+========================================= */
+
+.skills-video-circle {
+  display: flex;
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+
+  background-color: #ffffff;
+
+  border: 2px solid rgba(124, 58, 237, 0.75);
+
+  box-shadow:
+    0 3px 12px rgba(124, 58, 237, 0.1),
+    inset 0 0 0 1px rgba(139, 92, 246, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Light mode technology names */
+.skills-video-name {
+  display: block;
+
+  width: 100%;
+  margin-top: 11px;
+
+  color: #111827;
+
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+
+  text-align: center;
+
+  opacity: 1;
+  text-shadow: none;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   TECHNOLOGY BADGES — DARK MODE
+========================================= */
+
+html.dark .skills-video-circle {
+  background-color: #10172b;
+
+  border-color: rgba(139, 92, 246, 0.8);
+
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, 0.12);
+}
+
+/* Dark mode technology names */
+html.dark .skills-video-name {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* =========================================
+   BADGE HOVER ANIMATION
+========================================= */
+
+.skills-video-item:hover .skills-video-circle {
+  transform: translateY(-5px) scale(1.09);
+
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 0 22px rgba(139, 92, 246, 0.28);
+}
+
+html.dark
+.skills-video-item:hover
+.skills-video-circle {
+  border-color: #a78bfa;
+
+  box-shadow:
+    0 0 24px rgba(167, 139, 250, 0.3);
+}
+
+/* Hover technology name */
+.skills-video-item:hover .skills-video-name {
+  color: #6d28d9;
+}
+
+html.dark
+.skills-video-item:hover
+.skills-video-name {
+  color: #c4b5fd;
+}
+
+/* =========================================
+   MARQUEE SCROLL ANIMATIONS
+========================================= */
+
+/* First row: right to left */
+@keyframes skillsMarqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Second row: left to right */
+@keyframes skillsMarqueeRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause scrolling when hovered */
+.skills-video-paused .skills-video-track {
+  animation-play-state: paused;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 640px) {
+  .skills-video-group {
+    gap: 18px;
+    padding-right: 18px;
+  }
+
+  .skills-video-item {
+    flex-basis: 82px;
+  }
+
+  .skills-video-circle {
+    width: 58px;
+    height: 58px;
+  }
+
+  .skills-video-name {
+    font-size: 11px;
+  }
+
+  .skills-video-track {
+    animation-duration: 30s;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .skills-video-track {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .skills-video-circle {
+    transition: none;
+  }
+}
+
+/* =========================================
+   INTERACTIVE NEURAL NETWORK BACKGROUND
+========================================= */
+
+.neural-network-background {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  pointer-events: none;
+
+  opacity: 1;
+}
+
+/* Existing portfolio content above canvas */
+.neural-portfolio-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sections can show the network through
+   transparent or semi-transparent backgrounds */
+.neural-transparent-section {
+  background-color: transparent;
+}
+
+/* Optional readable glass cards */
+.neural-glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+html.dark .neural-glass-card {
+  background: rgba(17, 22, 42, 0.88);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .neural-network-background {
+    opacity: 0.8;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .neural-network-background {
+    opacity: 0.65;
+  }
+}
+
+/* ==========================================
+   GLOBAL INTERACTIVE NEURAL BACKGROUND
+========================================== */
+
+.neural-network-background {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep all sections above the animation */
+.neural-portfolio-content {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/* Optional section backgrounds */
+.neural-transparent-section {
+  background-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .neural-network-background {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neural-network-background {
+    opacity: 0.65;
+  }
+}
