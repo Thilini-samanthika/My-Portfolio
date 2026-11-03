@@ -99,7 +99,7 @@ npm run dev
 
 Open the local URL displayed in the terminal, usually:
 
-`http://localhost:5173`
+`http://localhost:5174`
 
 ### 5. Build for Production
 
@@ -125,10 +125,10 @@ I am actively developing my technical knowledge and seeking opportunities to gro
 
 ##  Connect With Me
 
-- **GitHub:** [Thilini-samanthika](https://github.com/Thilini-samanthika)
-- **LinkedIn:** Add LinkedIn Profile URL
-- **Portfolio:** Coming Soon
-- **Email:** Add Professional Email Address
+- **GitHub:** https://github.com/Thilini-samanthika
+- **LinkedIn:** https://www.linkedin.com/in/thilini-samanthika-7335a634b/
+- **Portfolio:** 
+- **Email:** thilinisadtwnika@gmail.com
 
 ---
 
