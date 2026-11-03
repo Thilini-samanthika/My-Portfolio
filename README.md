@@ -127,7 +127,7 @@ I am actively developing my technical knowledge and seeking opportunities to gro
 
 - **GitHub:** https://github.com/Thilini-samanthika
 - **LinkedIn:** https://www.linkedin.com/in/thilini-samanthika-7335a634b/
-- **Portfolio:** 
+- **Portfolio:** https://my-portfolio-kqgt.vercel.app/
 - **Email:** thilinisadtwnika@gmail.com
 
 ---
